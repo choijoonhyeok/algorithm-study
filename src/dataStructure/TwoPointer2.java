@@ -1,6 +1,6 @@
 package dataStructure;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class TwoPointer2 {
 
@@ -31,11 +31,41 @@ public class TwoPointer2 {
         );
     }
 
-    static void test(int[] arr, int m) {
+    static void test(int arr[] , int m) {
 
         System.out.println("===== TEST START =====");
 
         // ==========================
+        Arrays.sort(arr);
+        
+        //초기화
+        int lefttIndex = 0;
+        int rightIndex = arr.length-1;
+        int count =0;
+        
+        //투포인터
+        while(lefttIndex<rightIndex) {
+        	
+        	if(arr[lefttIndex]+arr[rightIndex]==m) {
+		
+        		count++;
+        		lefttIndex++;
+        		 
+        	}
+        	else if(arr[lefttIndex]+arr[rightIndex]>m) {
+        		rightIndex--;
+        	}
+        	else {
+        		lefttIndex++;
+        		
+        	}
+        	
+        }
+        
+        
+       System.out.print(count);
+        
+        
 
         // ==========================
 
